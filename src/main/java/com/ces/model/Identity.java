@@ -5,7 +5,10 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "IDENTITY")
+@Table(name = "IDENTITY",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "token")
+        })
 @Data
 public class Identity {
 
@@ -13,7 +16,9 @@ public class Identity {
     @GeneratedValue
     private Long id;
 
+    @Column( nullable = false)
     private String token;
+    @Column( nullable = false)
     private String role;
     private Long studentId;
 
