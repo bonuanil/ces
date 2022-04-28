@@ -1,4 +1,4 @@
-package com.ces.ces;
+package com.ces.application;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

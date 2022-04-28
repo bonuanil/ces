@@ -1,4 +1,4 @@
-package com.ces.ces;
+package com.ces.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
