@@ -25,17 +25,20 @@ After starting the application, we can navigate to http://localhost:8080/h2, whi
 
 On the login page, we'll supply the same credentials that we used in the application.properties
 
+Added schema diagram to resources/dbSchema.jpeg
+
+
 ### API Details
 
 | Actor   | Methods | Endpoint                                       | Details                                                  |
 |---------|---------|------------------------------------------------|----------------------------------------------------------|
-| ADMIN   | PUT     | /student                                       | Add a student                                            |
-| ADMIN   | POST    | /student/{id}                                  | Edit Student Information                                 |
-| ADMIN   | PUT     | /semester                                      | Add Semester                                             |  
-| ADMIN   | PUT     | /class                                         | Add Class                                                |
-| ADMIN   | PUT     | /semester/{sem_id}/class/{class_id}/register   | Register a class in Semester                             | 
+| ADMIN   | POST    | /student                                       | Add a student                                            |
+| ADMIN   | PUT     | /student/{id}                                  | Edit Student Information                                 |
+| ADMIN   | POST    | /semester                                      | Add Semester                                             |  
+| ADMIN   | POST    | /class                                         | Add Class                                                |
+| ADMIN   | POST    | /semester/{sem_id}/class/{class_id}/register   | Register a class in Semester                             | 
 | ADMIN   | GET     | /semester/{id}/part                            | Lists all the partime students enrolled for the semester |
-| STUDENT | PUT     | /student/semester/{id}/class/{class_id}/enroll | Enroll student to class and Semester                     |
+| STUDENT | POST    | /student/semester/{id}/class/{class_id}/enroll | Enroll student to class and Semester                     |
 | STUDENT | DELETE  | /student/semester/{id}/class/{class_id}/enroll | Delist student from class and semester                   | 
 | BOTH    | GET     | /student/{id}                                  | Full History of classed enrolled by student              |
 | BOTH    | GET     | /student/{id}/semester/{sem_id}                | List of classed enrolled by a student in a Semester      |

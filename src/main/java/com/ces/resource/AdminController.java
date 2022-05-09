@@ -20,27 +20,27 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @PutMapping("/student")
+    @PostMapping("/student")
     public ResponseEntity<String> registerStudent(@RequestBody Student student) {
         return new ResponseEntity<String>(adminService.registerStudent(student), HttpStatus.CREATED);
     }
 
-    @PostMapping("/student/{id}")
+    @PutMapping("/student/{id}")
     public ResponseEntity<String> updateStudent(@PathVariable Long studentId, @RequestBody Student student) {
         return new ResponseEntity<String>(adminService.updateStudent(studentId, student), HttpStatus.CREATED);
     }
 
-    @PutMapping("/semester")
+    @PostMapping("/semester")
     public ResponseEntity<Long> addSemester(@RequestBody Semester semester) {
         return new ResponseEntity<Long>(adminService.addSemester(semester), HttpStatus.CREATED);
     }
 
-    @PutMapping("/class")
+    @PostMapping("/class")
     public ResponseEntity<Long> addClass(@RequestBody AcademicClass academicClass) {
         return new ResponseEntity<Long>(adminService.addAcademicClass(academicClass), HttpStatus.CREATED);
     }
 
-    @PutMapping("/semester/{semId}/class/{classId}")
+    @PostMapping("/semester/{semId}/class/{classId}")
     public ResponseEntity<Long> addClass(@PathVariable Long semId, @PathVariable Long classId) {
         return new ResponseEntity<Long>(0L, HttpStatus.CREATED);
     }
