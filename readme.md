@@ -45,12 +45,23 @@ Added schema diagram to resources/dbSchema.jpeg
 | BOTH    | GET     | /semester/{sem_id}/class/{class_id}            | List of Students enrolled for a class in semester        |
 
 
+### Docker File - Steps
+
+    - FROM adoptopenjdk/openjdk11:jdk-11.0.2.9-slim directive adds JDK 11 as our base image from where the application will run.
+    - WORKDIR /opt directive sets the directory /opt inside the image as the working directory.
+    - ENV PORT 8080 directive creates an environment variable named PORT with the value 8080.
+    - EXPOSE 8080 directive exposes port 8080 in the image.
+    - COPY target/*.jar /opt/app.jar directory copies the jar file in the target folder (when using Maven) or build folder (when using Gradle) into the working directory in a file named app.jar in the image.
+    - ENTRYPOINT exec java $JAVA_OPTS -jar app.jar directive executes the jar file and starts the Spring Boot application.
+
 ### Installation & Testing
 
     1. Clone the project
     2. Build executable Jar
     3. Run the executable jar
     4. Access the endpoints 'http://localhost:8080/ces/<resource URI>"
+    5. Building Docker Image command : docker build -t <docker_image_name> .
+
 
 ## Authors
 1. Anil Kumar Bonu
