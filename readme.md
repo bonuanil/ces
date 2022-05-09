@@ -12,7 +12,7 @@ Develop a basic Class Enrollment System for Institutions & Students
 1. Administrators are pre loaded on startup.
 2. In-memory DB is volatile and results in data loss after restart.
 3. Field validations are ignored
-4. 
+4. All the API calls will come with token(ex: JWT) in the header, the token will validated using secret key. On successful validation, the service returns the response
 
 ### Dependencies
 1. Java
